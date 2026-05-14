@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+IE:wght@100..400&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Instagram</title>
+
+    <style>
+
+        body{
+            margin: 0;
+            color: aliceblue;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            background-color: black;
+        }
+
+        nav{
+            width: 20%;
+            height: 100vh;
+            background-color: black;
+            position: fixed;
+            box-shadow: 0 0 0 1px rgb(21, 21, 21);
+        }
+
+        #insta-logo{
+            margin: 0;
+            padding: 10px;
+            font-family: "Playwrite IE";
+            font-weight: 700;
+        }
+
+        .icon{
+            font-size: 20px;
+            padding: 1px;
+            margin: 2px;
+            color: rgb(171, 171, 171);
+        }
+
+        .sidebar{
+            display: flex;
+        }
+
+        #sidebar :hover{
+            background-color: rgba(240, 248, 255, 0.21);
+            transition: 0.2s;
+        }
+
+        .sidebar img{
+            width: 30px;
+        }
+
+        .sidebar a{
+            text-decoration: none;
+            color: rgb(171, 171, 171);
+            margin-top: 9px;
+            margin-left: 8px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        #sidebar2{
+            margin-top: 180px;
+        }
+
+        #sidebar2 :hover{
+            background-color: rgba(240, 248, 255, 0.21);
+            transition: 0.2s;
+        }
+
+        #foryou{
+            width: 55%;
+            min-height: 100vh;
+            margin-left: 216px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: black;
+        }
+
+        #stories{
+            width: 320px;
+            height: 100px;
+            display: flex;
+            margin-top: 10px;
+        }
+
+        .story{
+            width: 59px;
+            height: 59px;
+            background: linear-gradient(360deg, red 20%, yellow 70%, rgb(117, 18, 39) 100%);
+            margin: 10px;
+            border-radius: 100%;
+        }
+
+        .story img{
+            width: 55px;
+            height: 55px;
+            margin: 2px;
+            border-radius: 100%;
+        }
+
+        .story p{
+            text-align: center;
+            font-size: 10px;
+            margin-top: 2px;
+        }
+
+        .post{
+            margin-left: 10px;
+        }
+
+        .header{
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .header img{
+            width: 25px;
+            height: 25px;
+            border-radius: 100%;
+            margin-right: 10px;
+        }
+
+        .header h5{
+            font-size: 12px;
+            margin-top: 6px;
+        }
+
+        .header p{
+            font-size: 10px;
+            margin-top: 8px;
+            margin-left: 4px;
+            color: rgba(240, 248, 255, 0.336);
+        }
+
+        .header b{
+            margin-left: 150px;
+            color: rgba(240, 248, 255, 0.336);
+            cursor: pointer;
+        }
+
+        .picture img{
+            width: 300px;
+            height: 500px;
+            border-radius: 10px;
+        }
+
+        .interactions{
+            display: flex;
+            cursor: pointer;
+        }
+
+        .reaction{
+            margin: 5px;
+            margin-top: 0;
+        }
+
+        .interactions img{
+            width: 25px;
+            margin-top: 2px;
+        }
+
+        .interactions b{
+            margin-left: 105px;
+        }
+
+        .count{
+            font-size: 10px;
+            font-weight: 600;
+        }
+
+        .caption{
+            display: flex;
+        }
+
+        .caption b{
+            font-size: 13px;
+        }
+
+        .caption p{
+            font-size: 11px;
+            margin-left: 10px;
+            margin-top: 1px;
+        }
+
+        .cmnt{
+            background-color: black;
+            border: none;
+            color: white;
+        }
+
+        .submit{
+            background-color: black;
+            color: rgba(240, 248, 255, 0.325);
+            border: none;
+            margin-left: 95px;
+            cursor: pointer;
+        }
+
+        #suggestion{
+            width: auto;
+            min-height: 100vh;
+            background-color: black;
+        }
+
+        #info{
+            display: flex;
+            margin-top: 100px;
+        }
+
+        #info p{
+            font-size: 12px;
+            color: rgba(240, 248, 255, 0.325);
+        }
+
+        #info button{
+            font-size: 14px;
+            margin-left: 80px;
+            margin-top: 4px;
+            color: rgba(240, 248, 255, 0.911);
+            background-color: black;
+            border: none;
+            font-weight: 700;
+        }
+
+        .suggestForMe{
+            display: flex;
+        }
+
+        .suggestForMe img{
+            margin-top: 10px;
+            border-radius: 100%;
+            width: 40px;
+            height: 40px;
+        }
+
+        .name{
+            font-size: 12px;
+            margin-left: 15px;
+            font-weight: 600;
+            margin-bottom: 0;
+        }
+
+        .known{
+            font-size: 10px;
+            margin-left: 15px;
+            color: rgba(240, 248, 255, 0.325);
+        }
+
+        .follow{
+            margin-left: 50px;
+            background-color: black;
+            color: blue;
+            border: none;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        #footer-links{
+            margin-top: 20px;
+        }
+
+        #footer-links p{
+            color: rgba(240, 248, 255, 0.325);
+            font-size: 10px;
+        }
+
+        @media (max-width: 900px){
+
+            body{
+                display: block;
+            }
+
+            nav{
+                width: 70px;
+            }
+
+            #insta-logo{
+                display: none;
+            }
+
+            .sidebar a{
+                display: none;
+            }
+
+            .sidebar{
+                justify-content: center;
+                margin: 15px 0;
+            }
+
+            #sidebar2{
+                margin-top: 80px;
+            }
+
+            #foryou{
+                width: calc(100% - 70px);
+                margin-left: 70px;
+            }
+
+            #suggestion{
+                display: none;
+            }
+
+            .picture img{
+                width: 100%;
+                max-width: 400px;
+                height: auto;
+            }
+
+            .interactions b{
+                margin-left: auto;
+            }
+        }
+
+        @media (max-width: 600px){
+
+            nav{
+                width: 100%;
+                height: 55px;
+                bottom: 0;
+                top: auto;
+                z-index: 100;
+            }
+
+            #sidebar{
+                display: flex;
+                justify-content: space-around;
+            }
+
+            #sidebar2{
+                display: none;
+            }
+
+            #foryou{
+                width: 100%;
+                margin-left: 0;
+                padding-bottom: 70px;
+            }
+
+            #stories{
+                width: 100%;
+                overflow-x: auto;
+                padding-left: 10px;
+            }
+
+            .post{
+                width: 95%;
+            }
+
+            .interactions b{
+                margin-left: 170px;
+            }
+
+            .picture img{
+                width: 100%;
+                border-radius: 8px;
+            }
+
+            .caption{
+                flex-wrap: wrap;
+            }
+
+            .cmnt{
+                width: 70%;
+            }
+
+            .submit{
+                margin-left: 5px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+
+        <p id="insta-logo">Instagram</p>
+
+        <div id="sidebar">
+
+            <div class="sidebar">
+                <img src="media/home.png">
+                <a href="">Home</a>
+            </div>
+
+            <div class="sidebar">
+                <img src="media/search.png">
+                <a href="">Search</a>
+            </div>
+
+            <div class="sidebar">
+                <img src="media/explore.png">
+                <a href="">Explore</a>
+            </div>
+
+            <div class="sidebar">
+                <img src="media/reels.png">
+                <a href="">Reels</a>
+            </div>
+
+            <div class="sidebar">
+                <img src="media/notifications.png">
+                <a href="">Notifications</a>
+            </div>
+
+            <div class="sidebar">
+                <img src="media/create.png">
+                <a href="">Create</a>
+            </div>
+
+            <div class="sidebar">
+                <img src="media/profile.png">
+                <a href="">Profile</a>
+            </div>
+
+        </div>
+
+        <div id="sidebar2">
+
+            <div class="sidebar">
+                <img src="media/threads.png">
+                <a href="">Threads</a>
+            </div>
+
+            <div class="sidebar">
+                <p class="icon">☰</p>
+                <a href="">More</a>
+            </div>
+
+        </div>
+
+    </nav>
+
+    <main id="foryou">
+
+        <div id="stories">
+
+            <div class="story">
+                <img src="media/images.jpg">
+                <p>youssef_ch</p>
+            </div>
+
+            <div class="story">
+                <img src="media/round_profile_picture_hero_after.webp">
+                <p>celine.j.kh</p>
+            </div>
+
+            <div class="story">
+                <img src="media/png-circle-profile-picture-sticker-business-woman-transparent-background_53876-945863.avif">
+                <p>eliana</p>
+            </div>
+
+            <div class="story">
+                <img src="media/user-circles-set_78370-4704.avif">
+                <p>mhmd_ali</p>
+            </div>
+
+        </div>
+
+        <div class="post">
+
+            <div class="header">
+                <img src="media/images.jpg">
+                <h5>youssef_ch</h5>
+                <p>• 3h</p>
+                <b>...</b>
+            </div>
+
+            <div class="picture">
+                <img src="media/images (1).jpg">
+            </div>
+
+            <div class="interactions">
+
+                <p class="reaction">
+                    <img src="media/like.png">
+                </p>
+
+                <p class="count">156.2k</p>
+
+                <p class="reaction">
+                    <img src="media/comment.png">
+                </p>
+
+                <p class="count">99.5k</p>
+
+                <p class="reaction">
+                    <img src="media/share.png">
+                </p>
+
+                <b>
+                    <img src="media/save.png">
+                </b>
+
+            </div>
+
+            <div class="caption">
+                <b>youssef_ch</b>
+                <p>World safest place 😮‍💨...</p>
+            </div>
+
+            <input type="text" placeholder="Add a comment..." class="cmnt">
+            <button class="submit">➤</button>
+
+        </div>
+
+        <div class="post">
+
+            <div class="header">
+                <img src="media/images.jpg">
+                <h5>youssef_ch</h5>
+                <p>• 3h</p>
+                <b>...</b>
+            </div>
+
+            <div class="picture">
+                <img src="media/images (1).jpg">
+            </div>
+
+            <div class="interactions">
+
+                <p class="reaction">
+                    <img src="media/like.png">
+                </p>
+
+                <p class="count">156.2k</p>
+
+                <p class="reaction">
+                    <img src="media/comment.png">
+                </p>
+
+                <p class="count">99.5k</p>
+
+                <p class="reaction">
+                    <img src="media/share.png">
+                </p>
+
+                <b>
+                    <img src="media/save.png">
+                </b>
+
+            </div>
+
+            <div class="caption">
+                <b>youssef_ch</b>
+                <p>World safest place 😮‍💨...</p>
+            </div>
+
+            <input type="text" placeholder="Add a comment..." class="cmnt">
+            <button class="submit">➤</button>
+
+        </div>
+
+    </main>
+
+    <main id="suggestion">
+
+        <div id="info">
+            <p>Suggestions for you</p>
+            <button>See All</button>
+        </div>
+
+        <div class="suggestForMe">
+
+            <img src="media/istockphoto-1495088043-612x612.jpg">
+
+            <div>
+                <p class="name">wael.kond</p>
+                <p class="known">Suggestion for you</p>
+            </div>
+
+            <button class="follow">Follow</button>
+
+        </div>
+
+        <div class="suggestForMe">
+
+            <img src="media/istockphoto-1495088043-612x612.jpg">
+
+            <div>
+                <p class="name">elie.ten</p>
+                <p class="known">Suggestion for you</p>
+            </div>
+
+            <button class="follow">Follow</button>
+
+        </div>
+
+        <div class="suggestForMe">
+
+            <img src="media/istockphoto-1495088043-612x612.jpg">
+
+            <div>
+                <p class="name">elio_ms</p>
+                <p class="known">Suggestion for you</p>
+            </div>
+
+            <button class="follow">Follow</button>
+
+        </div>
+
+        <div id="footer-links">
+
+            <p>
+                About · Help · Press · API · Jobs · Privacy · Terms
+            </p>
+
+            <p>
+                Locations · Language · Meta Verified
+            </p>
+
+            <p>
+                © 2025 INSTAGRAM FROM META
+            </p>
+
+        </div>
+
+    </main>
+
+</body>
+</html>
