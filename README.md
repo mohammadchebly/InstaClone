@@ -23,6 +23,11 @@ This project was built to improve my frontend development skills and practice bu
 
 ## Live Demo
 
+https://mohammadchebly.github.io/InstaClone/
+
+## Preview
+
+![Instagram Clone Preview](instagram.png)
 
 
 ## Author
